@@ -75,14 +75,27 @@
 
     <script>
       function 계산하기(연산자) {
-        const n1 = document.getElementById("숫자1");
-        const n2 = document.getElementById("숫자2");
-        const result = document.getElementById("계산결과");
+        const n1 = Number(document.getElementById("숫자1").value);
+        const n2 = Number(document.getElementById("숫자2").value);
+        const culresult = document.getElementById("계산결과");
 
         //만약에 ~~ 이 값이 진실이라면!
+        if (연산자 == "+") {
+          culResult = n1 + n2;
+        } else if (연산자 == "-") {
+          culResult = n1 - n2;
+        } else if (연산자 == "*") {
+          culResult = n1 * n2;
+        }
       }
     </script>
 
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
     <h3>inner HTML TEXT 차이점</h3>
     <div>
       <div id="xInnerText"></div>

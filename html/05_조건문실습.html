@@ -24,12 +24,121 @@
         //  잔액이 없어서 힘들것 같아
         // 5000원 이하면 언제까지 돌려줄 수 있는지 알려줘^^ 를 보냄
         //(alert) 사용 if - else 문 사용
-        const money = document.getElementById("input1").value;
+        const money = document.getElementById("input1");
+        const 잔액 = Number(money.value);
 
-        if (money >= 5000) {
+        if (잔액 >= 5000) {
           alert("잔액이 없어서 힘들것 같아");
         } else {
           alert("언제까지 돌려줄 수 있는지 알려줘^^");
+        }
+      }
+    </script>
+
+    <h4>홀 / 짝 확인하기</h4>
+    <input type="number" id="input2" />
+    <button type="bitton" onclick="홀짝기능()">확인하기</button>
+
+    <script>
+      function 홀짝기능() {
+        const 인풋2 = document.getElementById("input2");
+        const val2 = Number(인풋2.value);
+
+        if (val2 % 2 == 1) {
+          //홀수라면
+          alert("홀수입니다.");
+        } else {
+          //짝수라면
+          alert("짝수입니다.");
+        }
+      }
+    </script>
+
+    <h1>if(만약에) - else if(아니라면 이렇게, 저렇게) - else(모두 아니면)</h1>
+    <pre>
+        <code>
+            if(조건식1) {
+                조건식1이 true인 경우에만 실행
+            } else if(조건식2) {
+                앞선 if의 조건식이 false이면서 
+                else if의 조건식이 true인 경우;
+            }elss {
+                모든 if, else if가 false인 경우 실행
+            }
+        </code>
+
+        * else if 구문은 원하는만큼 작성 가능
+
+        * 앞선 if / else if 문 조건이 false인 경우
+           이후 else if에서 해당 범위는 제외
+    </pre>
+
+    <h3>어린이, 청소년, 성인 구분하기</h3>
+    <pre>
+        나이를 입력 받아
+        0세 ~ 13세 : 어린이
+        14세 ~ 19세 : 청소년
+        20세 ~ 150세 : 성인
+        0 미만 150초과 : 잘못 입력 하셨습니다.
+        미입력 : 값을 입력해주세요.
+    </pre>
+    나이 :
+    <input type="number" id="inputage" required />
+    <button onclick="체크4()">확인하기</button>
+
+    <script>
+      //확인하기 버튼을 클릭했을때
+      const inputAge = document.getElementById("inputage");
+      function 체크4() {
+        //입력한 나이 값 얻어오기
+        const 받아온나이값 = Number(inputAge.value);
+
+        // 1. 0미만 150초과 -> 잘못입력하셨습니다.
+        // 2. 0세 ~ 13세 -> 어린이
+        // 3. 14세 ~ 19세 -> 청소년
+
+        // || = or, 또는
+        // && = and, 양쪽 모두 참일 경우
+        if (받아온나이값 < 0 || 받아온나이값 > 150) {
+          alert("잘못 입력 하셨습니다");
+        } else if (받아온나이값 >= 0 && 받아온나이값 <= 13) {
+          alert("어린이");
+        } else if (받아온나이값 <= 19) {
+          alert("청소년");
+        } else {
+          alert("성인");
+        }
+      }
+    </script>
+
+    <h4>주행비용 계산하기</h4>
+    <p>이동 거리에 따라 주행비용 계산해주는 프로그램입니다.</p>
+    <p>이동거리 : <input type="number" id="input3" />km</p>
+    <button type="button" onclick="주행거리계산기능()">계산하기</button>
+
+    <script>
+      /*
+        1. 입력된 거리를 js로 가져오기
+        const 인풋3
+        const amount에 value값 저장
+
+        3km 이하 기본 요금 3000원
+        3km 초과 10km 이하 8000원
+
+        10km 초과 모두 20000원
+        alert 주행거리 비용은 000입니다.
+        */
+
+      const 인풋3 = document.getElementById("input3");
+
+      function 주행거리계산기능() {
+        const amount = Number(인풋3.value);
+        if (amount <= 3) {
+          alert("주행거리 비용은 3000원 입니다.");
+        } else if (amount <= 10) {
+          alert("주행거리 비용은 8000원 입니다.");
+        } else {
+          alert("주행거리 비용은 20000원입니다.");
         }
       }
     </script>
