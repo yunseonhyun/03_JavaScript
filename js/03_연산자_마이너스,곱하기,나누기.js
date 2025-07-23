@@ -47,4 +47,30 @@ function minusFn() {
   // 소비자가 작성을 모두 완료했다면 원하는 계산기 버튼을 클릭해서 계산결과값을 확인할 수 있도록 해야힘
   const value1 = num1.value;
   const value2 = num2.value;
+
+  // input은 기본으로 글자일 수 있기 때문에
+  // 글자를 숫자로 감싸는 형변환 작업 진행
+  reslt.innerText = Number(value1) - Number(value2);
+}
+
+function multiFn() {
+  const val1 = Number(num1.value);
+  const val2 = Number(num2.value);
+
+  reslt.innerText = val1 * val2;
+}
+
+function divFn() {
+  reslt.innerText = Number(num1.value) / Number(num2.value);
+}
+
+function modFn() {
+  /*
+    나머지 연산(%)은 나누기 계산 시
+    몫이 정수인 부분까지만 계산하고 남은 나머지 값을 출력한다
+    */
+  const value1 = num1.value;
+  const value2 = num2.value;
+
+  reslt.innerText = Number(value1) % Number(value2);
 }
