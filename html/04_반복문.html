@@ -34,6 +34,42 @@
         증감식 : 초기식에 사용된 값을 변환 시키는 식
                 -> 변환된 초기식에 의해서 조건식의 결과가 달라지게 한다.
     </pre>
+    <!-- 12345 출력 -->
+
+    <!-- 1부터 10까지 1씩 증가하며 출력-->
+    <button onclick="check1()">확인1</button>
+    <!-- 5부터 10까지 1씩 증가하며 출력-->
+    <button onclick="check2()">확인2</button>
+    <!-- 1부터 10까지 모든 정수의 합 출력-->
+    <button onclick="check3()">확인3</button>
+
+    <script>
+      function check1() {
+        /*
+        for([1]초기식; [2]조건식; [4]증감식) {
+        //[3] 조건식이 true인 경우 반복 수행할 코드;
+        }
+        */
+        for (let num = 1; num <= 5; num++) {
+          console.log(num);
+        }
+      }
+
+      function check2() {
+        for (let num = 5; num <= 10; num++) {
+          console.log("확인 체크 2번" + num);
+        }
+      }
+
+      function check3() {
+        // 모든 정수의 합을 담을 변수 이름 설정
+        let 합 = 0;
+        for (let num = 1; num <= 10; num++) {
+          합 += num;
+          console.log("숫자들의 합 :" + 합);
+        }
+      }
+    </script>
 
     <h1>while 문</h1>
     <pre>
