@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>While문 실습하기</title>
+    <link rel="stylesheet" href="../css/04_반복문_실습while문.css" />
   </head>
   <body>
     <h1>while문 음식 주문</h1>
@@ -16,7 +17,7 @@
       <option value="3">햄버거 - 8,000원</option>
       <option value="4">음료 - 3,000원</option>
     </select>
-
+    <br />
     <button onclick="주문추가기능()">주문 추가</button>
     <button onclick="주문완료기능()">주문 완료</button>
     <button onclick="주문초기화기능()">초기화</button>
@@ -33,6 +34,7 @@
       // let보다 const를 사용하는 것이 바람직함
 
       let orders = "";
+      let 주문번호 = 0; // 카운터 기능 추가
       function 주문추가기능() {
         const menu = document.getElementById("menuSelect").value;
         // 고객이 원하는 메뉴를 주문하는 것은 다양한 선택지가 존재하기 때문에
@@ -66,7 +68,12 @@
         }
 
         // 주문 추가
-        orders = `${orders}  ${foodName} - ${price} + 원<br>`;
+        // ++주문번호는 주문을 1개 추가한 상태에서
+        // 현재 주문이 어디까지 진행됐는지 바로 확인
+
+        // 주문번호++는 주문이 추가되기 전 상태를 확인
+
+        orders = `${foodName} - ${price} + 원* ${++주문번호}개`;
         //-> 백틱 형태로 감싸서 ${변수이름} 변경
 
         // 주문에 대한 결과를 화면에 보여주기
@@ -79,6 +86,32 @@
         `;
         */
       }
+
+      //주문 초기화기능 완성
+      /*
+      orders = "";
+      innerHTML = "";
+      value = "";
+      */
+
+      function 주문초기화기능() {
+        orders = "";
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("menuSelect").value = "";
+      }
+
+      function 주문완료기능() {
+        // 만약에 orders가 빈값이라면 alert 주문한 메뉴가 없습니다. 띄우기
+        // 주문이 존재한다면 alert 주문 완료되었습니다 띄우기
+        if (orders == "") {
+          alert("주문한 메뉴가 없습니다");
+        } else {
+          alert("주문 완료되었습니다.");
+        }
+        //주문 완료하고 oreders비우기
+        주문초기화기능();
+      }
     </script>
+    <script src="../js/04_반복문_실습while문.js"></script>
   </body>
 </html>
