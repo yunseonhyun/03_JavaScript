@@ -16,7 +16,6 @@ fetchPost.addEventListener("click", function () {
         <strong>ID:</strong>${data.Id}<br>
         <strong>title:</strong>${data.title}<br>
         <strong>body:</strong>${data.body}<br>
-        
         `;
     });
 });
