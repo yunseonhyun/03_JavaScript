@@ -1,3 +1,5 @@
+// node modules가 없지만 package.json이 존재하면 npm i 명령어를 이용하여 
+// node_modules 폴더와 하위 내용을 생성할 수 있다.
 /*
 
 package.json
